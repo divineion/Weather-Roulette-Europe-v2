@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Weather App</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sen:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./sass/main.css">
+        <script src="js/app.js" type="module"></script>
+        <script src="js/home.js" type="module"></script>
+        <script src="js/scrap-google.js" type="module"></script>
+        <script src="js/navbar.js" type="module"></script>
+        <script src="js/random-city.js" type="module"></script>
+        <script src="js/forecast-5days.js" type="module"></script>
+        <script src="js/param.js" type="module"></script>
+    </head>
+    <body>
+        <div class="component">
+            <header class="header">
+                <div class="header__maps"></div>
+                <div class="header__search-bar">
+                    <label for="search"></label>
+                    <input type="search" id="search" placeholder="Saisir un nom de ville">
+                    <input type="image" id="search-button" src="sass/assets/1/search2.svg"  alt="bouton cliquable en forme de loupe" title="lancer la recherche">
+                </div>
+                <div class="header__home-button">
+                    <a href="index.html"> <img src="./sass/assets/1/home.svg" alt="bouton cliquable en forme de maison" title="retour à l'accueil"> </a>
+                </div>
+            </header>
+            <main class="main">
+            </main>
+        </div>
+    </body>
+</html>

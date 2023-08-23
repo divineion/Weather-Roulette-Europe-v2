@@ -1,0 +1,409 @@
+:root {
+  color: #FFFFFF;
+  font-size: 1rem;
+}
+
+body {
+  max-width: 100svw;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+  overflow: scroll;
+  background-color: black;
+}
+body .component {
+  min-height: 100svh;
+  max-width: 28.125rem;
+  margin: auto;
+  background: url(assets/1/braden-jarvis-qFvXZNTPlng-unsplash1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .component.aube {
+  background-image: url(assets/2/aube-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .component.aprem {
+  background-image: url(assets/2/aprem-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .component.soir {
+  background-image: url(assets/2/soir-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .component.nuit {
+  background-image: url(assets/2/nuit-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .component .header {
+  max-width: 28.125rem;
+  width: 100%;
+  height: 3.75rem;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(59, 59, 59);
+  transition: width 0.3s ease;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 0 2.6875rem 0 2.75rem;
+  background-color: rgb(70, 43, 226);
+  background-image: linear-gradient(rgba(128, 128, 128, 0.932), rgba(128, 128, 128, 0.66));
+}
+body .component .header.expanded {
+  max-width: 28.125rem;
+  width: 100%;
+  top: 0;
+  height: 20svh;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+body .component .header__maps {
+  width: 2.096rem;
+  height: 2.0985rem;
+  background-image: url(assets/1/map.svg);
+}
+body .component .header__maps.expanded {
+  display: none;
+}
+body .component .header__search-bar {
+  width: 80%;
+  height: 1.75rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  border-radius: 27px;
+  box-sizing: border-box;
+  padding: 0 0.2156rem 3.65px 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(1px);
+}
+body .component .header__search-bar.expanded {
+  display: none;
+}
+body .component .header__search-bar input[type=search] {
+  border: none;
+  background-color: transparent;
+  max-width: 60%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  font-size: inherit;
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+}
+body .component .header__search-bar input[type=search] ::placeholder {
+  color: #FFFFFF;
+}
+body .component .header__home-button {
+  height: 2.0985rem;
+  display: none;
+  display: none;
+}
+body .component .header__home-button.expanded {
+  display: block;
+}
+body .component main {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .component main .home {
+  min-height: 100svh;
+  padding: 3.5625rem 2.6875rem 3.875rem 2.75rem;
+  box-sizing: border-box;
+}
+body .component main .home__modal {
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.8999999762;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(1.3999999762px);
+  box-sizing: border-box;
+  padding: 14px 6px 0.875rem 0.8125rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 25rem;
+}
+body .component main .home__container {
+  width: 100%;
+  height: max-content;
+}
+body .component main .home__container--places {
+  width: 100%;
+  height: 5rem;
+  box-sizing: border-box;
+  padding: 14px 6px 0.875rem 0.8125rem;
+  margin-bottom: 0.625rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.8999999762;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(1.3999999762px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .component main .home__container--places--details {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 0.9375rem;
+}
+body .component main .home__container--places--details .home__container--places--location {
+  display: flex;
+  flex-direction: column-reverse;
+}
+body .component main .home__container--places--details .home__container--places--location .home__container--places--ville {
+  display: initial;
+}
+body .component main .home__container--places--details .home__container--places--location .home__container--places--pays {
+  display: initial;
+}
+body .component main .home__container--places--weather {
+  display: flex;
+  align-items: center;
+}
+body .component main .home__container--places--weather > .weather-icon.clear {
+  background-image: url(../sass/assets/illustrations-meteo/soleil1.svg);
+  background-repeat: no-repeat;
+  background-size: 1.9375rem;
+  width: 2.5625rem;
+  height: 2rem;
+}
+body .component main .home__container--places--weather > .weather-icon.clouds {
+  background-image: url(../sass/assets/illustrations-meteo/nuageux1.svg);
+  background-repeat: no-repeat;
+  background-size: 1.9375rem;
+  width: 2.5625rem;
+  height: 2rem;
+}
+body .component main .home__container--places--weather > .weather-icon.rain {
+  background-image: url(../sass/assets/illustrations-meteo/pluie-1.svg);
+  background-repeat: no-repeat;
+  background-size: 1.9375rem;
+  width: 2.5625rem;
+  height: 2rem;
+}
+body .component main .home__container--places--weather > .weather-icon.snow {
+  background-image: url(../sass/assets/illustrations-meteo/neige1.svg);
+  background-repeat: no-repeat;
+  background-size: 1.9375rem;
+  width: 2.5625rem;
+  height: 2rem;
+}
+body .component main .home__container--places--weather p {
+  margin-left: 1rem;
+}
+body .component div.random {
+  width: inherit;
+  height: 500px;
+  background-color: green;
+}
+body .component div.results {
+  min-height: 100svh;
+  box-sizing: border-box;
+  padding: 57px 2.5625rem 4.5rem 2.5625rem;
+  background: url(assets/2/ravi-sharma-hNv5s6NEYig-unsplash1.svg);
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+body .component div.results__favoris-icon {
+  height: 2.0625rem;
+  text-align: end;
+  margin-top: 1.25rem;
+}
+body .component div.results__selected-place {
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+body .component div.results__selected-place--location {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+body .component div.results__selected-place--pays {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+body .component div.results__selected-place--pays ::before {
+  content: url();
+}
+body .component div.results__current-date {
+  color: #FFFFFF;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 24px;
+  font-weight: 700;
+}
+body .component div.results__search-result {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+body .component div.results__search-result .current-temperature {
+  font-size: 64px;
+  font-weight: 700;
+  margin-top: 2.375rem;
+}
+body .component div.results__search-result .current-temperature::before {
+  content: url(assets/2/Temperature.svg);
+}
+body .component div.results__search-result--details {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
+}
+body .component div.results__search-result--details--current-weather {
+  height: 3.75rem;
+}
+body .component div.results__search-result--details--current-weather p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+body .component div.results__search-result--details #humidity::before {
+  content: url(assets/2/humidity.svg);
+}
+body .component div.results__search-result--details #wind::before {
+  content: url(assets/2/wind.svg);
+}
+body .component div.results__search-result--details #feelsLike::before {
+  content: url(assets/2/image.svg);
+}
+body .component div.results .more .texte {
+  font-size: 24px;
+  font-weight: 600;
+}
+body .component div.results .more .extract {
+  font-size: 0.875rem;
+  margin-top: 1.875rem;
+  margin-bottom: 1.875rem;
+}
+body .component div.results .more #modal {
+  background-color: rgb(24, 24, 30);
+  width: 35%;
+  height: fit-content;
+  overflow-y: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: 200ms;
+  border-radius: 20px;
+}
+body .component div.results .more #modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+body .component div.results .more #modal .modal-content {
+  margin: auto;
+  position: relative;
+}
+body .component div.results .more #modal .modal-content .modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+body .component div.results .more #modal .modal-content .modal-body {
+  padding: 10px;
+  height: 60%;
+  max-height: 60svh;
+  font-size: 1rem;
+  font-weight: 400;
+}
+body .component div.results .more #modal .modal-content .modal-footer {
+  border-top: 1px solid #413e3e;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.625rem;
+}
+body .component div.results .more #modal .modal-content .modal-footer .read-more {
+  text-align: left;
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: #413e3e;
+}
+body .component div.results .more #modal .modal-content .modal-footer .btn {
+  padding: 5px;
+  background-color: rgb(6, 0, 128);
+  text-decoration: none;
+  width: 20px;
+}
+body .component div.results .more .button-container {
+  display: flex;
+  justify-content: space-between;
+}
+body .component div.results .more .button-container button {
+  text-decoration: none;
+  color: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 27px;
+  border: 1px solid rgba(255, 255, 255, 0.01);
+  background: rgba(255, 255, 255, 0.37);
+  backdrop-filter: blur(0.200000003px);
+  width: 40%;
+  height: 50px;
+  box-shadow: inset 0px 0px 12px 0px;
+}
+body .component div.results .more .button-container button > a {
+  text-decoration: none;
+  letter-spacing: 1.1px;
+  color: inherit;
+}
+body .component .forecast5days {
+  min-height: 100svh;
+  height: max-content;
+  padding: 3.5625rem 2.6875rem 3.875rem 2.75rem;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+body .component .forecast5days__title {
+  color: red;
+  text-align: center;
+}
+body .component .forecast5days__forecastPerDay {
+  width: 100%;
+  height: 5rem;
+  box-sizing: border-box;
+  padding: 1.625rem 0.375rem 0.875rem 0.8125rem;
+  margin-bottom: 0.625rem;
+  border-radius: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.8999999762;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(1.3999999762px);
+  display: flex;
+  justify-content: space-between;
+}
+
+/*# sourceMappingURL=main.css.map */
