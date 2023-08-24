@@ -58,7 +58,7 @@ body {
             box-sizing: border-box;
             padding: 0 2.6875rem 0 2.75rem;
             background-color: rgb(70, 43, 226);
-            background-image: linear-gradient(rgba(128, 128, 128, 0.932), rgba(128, 128, 128, 0.66));
+            background-image: linear-gradient(rgba(128, 128, 128, 0.933), rgba(128, 128, 128, 0.66));
 
             &.expanded {
                 max-width: 28.125rem;
@@ -332,6 +332,7 @@ body {
                         }              
                     }
                 }
+
                 .more {
                     .texte {
                         font-size: 24px;
@@ -445,8 +446,10 @@ body {
                 justify-content: flex-end;
 
                 &__title {
-                    color: red;
+                    color: white;
                     text-align: center;
+                    font-size: 1.5rem;
+                    font-weight: 700;
                 }
 
                 &__forecastPerDay {

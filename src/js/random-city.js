@@ -34,10 +34,8 @@ export async function selectRandomCity() {
     .then((response) => response.json())
     .then((data) => {
       const listeVilles = data;
-      // Générer un nombre aléatoire entre 0 et la taille de la liste des villes
       indiceVille = Math.floor(Math.random() * listeVilles.length);
 
-      // Récupérer les détails de la ville sélectionnée
       villeRandom = listeVilles[indiceVille];
       nomVilleAPIRandom = villeRandom.name;
       cityIdRandom = villeRandom.id;
