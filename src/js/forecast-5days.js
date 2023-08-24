@@ -1,12 +1,10 @@
 import { appid } from "./param.js";
-import { nomVilleAPI } from "./app.js";
+import { nomVilleAPI, ville } from "./app.js";
 import { nomVilleAPIRandom } from "./random-city.js";
 import { kelvinToCelsius } from "./app.js";
-
-let weatherIcon;
-
+let villeAPI;
 export function forecast() {
-  const villeAPI = nomVilleAPI || nomVilleAPIRandom;
+   villeAPI = nomVilleAPI || nomVilleAPIRandom;
   const forecastContainer = document.querySelector(".forecast5days");
   fetch(
     `https://api.openweathermap.org/data/2.5/forecast?q=${villeAPI}&appid=${appid}`
@@ -16,7 +14,7 @@ export function forecast() {
 
       const forecast5days = document.createElement("div")
       forecast5days.classList.add("forecast5days")
-
+      console.log(data)
       //tableau contenant les prévisions à 9h de jour J à J+4
       const nextDaysForecast = [
         data.list[7],
@@ -66,18 +64,23 @@ export function forecast() {
             forecastWeather.classList.add("snow");
             break;
         }
-console.log(element.weather[0].main)
 
         forecastPerDay.appendChild(forecastDate);
         forecastPerDay.appendChild(forecastTemp);
         forecastPerDay.appendChild(forecastWeather);
         forecast5days.appendChild(forecastPerDay);
-        let forecastDateValue = new Date(element.dt_txt);
+
+
+        let forecastDateValue = new Date(element.dt_txt);  
+
+
+
         forecastDate.textContent = forecastDateValue.toLocaleString("fr-FR", {
           weekday: "long",
         });
-        forecastTemp.textContent = kelvinToCelsius(element.main.temp);
-        forecastWeather.textContent = element.weather[0].main;
+
+        forecastTemp.textContent = kelvinToCelsius(element.main.temp)+'°';
+        forecastWeather = element.weather[0].main;
       });
 
       main.replaceChildren(forecast5days);

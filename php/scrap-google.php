@@ -11,5 +11,6 @@ if(!isset($_GET['villeAPI'])){
 
 $html = file_get_html('https://www.google.com/search?q='.$villeAPI);
 $paragraph = $html->find('#main > div:nth-child(4) > div > div.xpc > div:nth-child(1) > div:nth-child(2) > div > div > div > div',0)->innertext;
-$paragraph = utf8_encode($paragraph);
+echo $paragraph;
+$paragraph = mb_convert_encoding($paragraph, "UTF-8");
 print_r($paragraph);

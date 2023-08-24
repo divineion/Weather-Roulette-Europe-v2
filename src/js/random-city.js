@@ -12,6 +12,7 @@ import {
 
 
 
+
 /*****************RECHERCHE RANDOM D'UN NOM DE VILLE************************/
 let map = document.querySelector(".header__maps");
 let villeRandom;
@@ -64,8 +65,8 @@ searchButton.addEventListener("click", searchByiD);
 
 /****************VERS LES EXTRAITS DE RESULTATS GOOGLE*********************************/
 //placement des imports une fois les éléments créés
-import { discoverButton, googleSearch } from "./scrap-google.js";
-import googleSearchInit from "./scrap-google.js";
+import { discoverButton, findAttractions } from "./opentripmap.js";
+import findAttractionsInit from "./opentripmap.js";
 if (discoverButton) {
-  discoverButton.addEventListener("click", googleSearch);
+  discoverButton.addEventListener("click", findAttractions);
 }

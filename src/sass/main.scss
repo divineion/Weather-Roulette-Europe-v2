@@ -60,6 +60,10 @@ body {
             background-color: rgb(70, 43, 226);
             background-image: linear-gradient(rgba(128, 128, 128, 0.933), rgba(128, 128, 128, 0.66));
 
+            &__maps:hover, #search-button:hover {
+                cursor: pointer;
+            }
+
             &.expanded {
                 max-width: 28.125rem;
                 width: 100%;
@@ -110,8 +114,8 @@ body {
                     width: 100%;
                     height: 100%;
                     color: $white;
-                    ::placeholder {
-                            color: $white;
+                    &::placeholder {    
+                        color: $white;
                     }
                 }
             }
@@ -131,9 +135,7 @@ body {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
             background-repeat: no-repeat;
             background-size: cover;
-
-        
-                
+              
             .home {
                 min-height: 100svh;
                 padding: 3.5625rem 2.6875rem 3.875rem 2.75rem;
@@ -345,6 +347,7 @@ body {
                     }
 
                     #modal {
+                         
                         background-color: rgba(24, 24, 30);
                         width: 35%;
                         height: fit-content;
@@ -355,15 +358,10 @@ body {
                         transform: translate(-50%, -50%);
                         z-index: 2;
                         display: flex;
-                        visibility: hidden;
-                        opacity: 0;
+                        opacity: 1;
                         transition: 200ms;
                         border-radius: 20px;
-
-                        &.show {
-                            visibility: visible;
-                            opacity: 1;
-                        }
+                        
 
                         .modal-content {
                             margin: auto;
@@ -397,8 +395,7 @@ body {
                                     text-decoration: none;
                                     color: #413e3e;
                                 }
-                            
-                                .btn {
+                                .attractions-modal-btn {
                                     padding: 5px;
                                     background-color: rgb(6, 0, 128);
                                     text-decoration: none;
@@ -443,7 +440,7 @@ body {
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-end;
+                justify-content: space-around;
 
                 &__title {
                     color: white;
@@ -457,15 +454,54 @@ body {
                     height: 5rem;
                     box-sizing: border-box;
                     padding: 1.625rem .375rem .875rem .8125rem;
-                    margin-bottom: .625rem;
                     border-radius: 20px;
                     border-radius: 20px;
                     border: 1px solid rgba(255, 255, 255, 0.10);
                     opacity: 0.8999999761581421;
                     background: rgba(255, 255, 255, 0.06);
                     backdrop-filter: blur(1.399999976158142px);
-                    display: flex;
-                    justify-content: space-between;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    justify-items: center;
+
+                    &--forecastWeather {
+                        &.weather-icon {
+                                
+                            &.clear {
+                                background-image: url(../sass/assets/illustrations-meteo/soleil1.svg);
+                                background-repeat: no-repeat;
+                                background-size: 1.9375rem;
+                                width: 2.5625rem;
+                                height: 2rem; 
+                            }
+        
+                            &.clouds {
+                                background-image: url(../sass/assets/illustrations-meteo/nuageux1.svg);
+                                background-repeat: no-repeat;
+                                background-size: 1.9375rem;
+                                width: 2.5625rem;
+                                height: 2rem;
+                            }
+        
+                            &.rain {
+                                background-image: url(../sass/assets/illustrations-meteo/pluie-1.svg);
+                                background-repeat: no-repeat;
+                                background-size: 1.9375rem;
+                                width: 2.5625rem;
+                                height: 2rem;
+                            }
+                            
+                            &.snow {
+                                background-image: url(../sass/assets/illustrations-meteo/neige1.svg);
+                                background-repeat: no-repeat;
+                                background-size: 1.9375rem;
+                                width: 2.5625rem;
+                                height: 2rem;
+                            }
+                        
+                            }
+                    }
+
                     }
             }
         } 

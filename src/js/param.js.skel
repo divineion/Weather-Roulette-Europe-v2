@@ -1,2 +1,5 @@
 //appid : public key of OpenWeatherMap API
 export const appid = "";
+
+//appidOpentripMap : public key of OpenTripMap API
+export const appidOpentripMap = '';

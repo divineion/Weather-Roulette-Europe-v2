@@ -114,10 +114,9 @@ export function createView(dataArray, containerSelector) {
   }
 }
 
-home = home = document.createElement('div');
+home = document.createElement('div');
 home.classList.add('home');
 home.append(favContainerHeading, favContainer, previousSearchContainerHeading, previousSearchContainer);
-
 
 // CAS D'UN LOCAL STORAGE TOTALEMENT VIDE
 if (favoris.length === 0 && recherches.length ===0) {
@@ -125,8 +124,8 @@ if (favoris.length === 0 && recherches.length ===0) {
   home.classList.add('home');
   const modal = document.createElement('div');
   modal.setAttribute('id', 'homeModal');
-  modal.classList.add('home__modal')
-  modal.textContent = "L'appli est encore toute neuve ! Faites une recherche en saisissant la ville de votre choix, ou laissez-vous suprendre en cliquant sur la carte !"
+  modal.classList.add('home__modal');
+  modal.innerHTML = "L'appli est encore toute neuve ! <br> Faites une recherche en saisissant la ville de votre choix, ou laissez-vous suprendre en cliquant sur la carte !"
   main.append(home);
   home.append(modal);
 }

@@ -4,9 +4,8 @@ import {
   cityIdRandom,
   nomVilleAPIRandom,
 } from "./random-city.js";
-
 import { forecast } from "./forecast-5days.js";
-import { googleSearch, googleSearchInit } from "./scrap-google.js";
+import { findAttractions, findAttractionsInit } from "./opentripmap.js";
 import { appid } from "./param.js";
 
 const searchButton = document.querySelector("#search-button");
@@ -27,9 +26,12 @@ let component;
 export let ville = {};
 export let cityNameView2;
 export let weather;
+export let nomVilleAPI;
+export let lon;
+export let lat;
 
 export const heure = new Date().getHours();
-export let nomVilleAPI;
+
 let toForecastBtn;
 export let cityId;
 
@@ -75,7 +77,7 @@ export async function searchByCity() {
         console.log(`L'ID de la ville ${search} est ${cityId}`);
         return city.id;
       } else {
-        return null; // Retourner null ici
+        return null; 
       }
     });
 }
@@ -88,14 +90,19 @@ export async function searchByiD(cityId) {
     )
     const data = await response.json();
     console.log(data)
+    lat = data.coord.lat;
+    lon = data.coord.lon;
+    console.log('lat '+lat);
+    console.log('lon '+lon);
 
-    let temp = Math.round(kelvinToCelsius(data.main.temp));
-    let feels_like = kelvinToCelsius(data.main.feels_like);
-    let humidity = data.main.humidity;
-    let wind = Math.round(data.wind.speed);
+    let temp = Math.round(kelvinToCelsius(data.main.temp))
+    let feels_like = kelvinToCelsius(data.main.feels_like)
+    let humidity = data.main.humidity
+    let wind = Math.round(data.wind.speed)
     let pays = data.sys.country,
-    weather = data.weather[0].main,
+    weather = data.weather[0].main;
     nomVilleAPI = data.name;
+    console.log(nomVilleAPI)
 
     /*******************création des éléments HTML****************************/
     const results = document.createElement("div");
@@ -162,7 +169,6 @@ export async function searchByiD(cityId) {
     });
 
     const paragraphAttributes = ["humidity", "wind", "feelsLike"];
-    console.log(detailParagraphs);
     for (let i=0; i<detailParagraphs.length; i++) {
         const paragraph = detailParagraphs[i];
         const attributeName = paragraphAttributes[i];
@@ -176,39 +182,39 @@ export async function searchByiD(cityId) {
     const vent = resultsDivs[1];
     const ressentie = resultsDivs[2];
 
-    const moreInfo = document.createElement("div");
-    moreInfo.classList.add("more");
 
-    const modalContainer = document.createElement("div");
-    modalContainer.classList.add("texte");
-    modalContainer.id = "modal";
 
-    const modalContent = document.createElement("div");
-    modalContent.classList.add("results__search-result--more");
-    modalContent.classList.add("modal-content");
+    // const modalContainer = document.createElement("div");
+    // modalContainer.classList.add("texte");
+    // modalContainer.id = "modal";
 
-    const modalBody = document.createElement("div");
-    modalBody.classList.add("modal-body");
+    // const modalContent = document.createElement("div");
+    // modalContent.classList.add("results__search-result--more");
+    // modalContent.classList.add("modal-content");
 
-    const modalFooter = document.createElement("div");
-    modalFooter.classList.add("modal-footer");
-    const modalCloseButton = document.createElement("button");
-    modalCloseButton.classList.add("btn");
-    const readMore = document.createElement("a");
-    readMore.classList.add("read-more");
-    readMore.href = "https://www.google.com/search?q=" + nomVilleAPI;
-    readMore.target = "blank";
-    readMore.textContent = "Voir plus d'informations";
-    modalFooter.append(readMore);
-    modalFooter.append(modalCloseButton);
+    // const modalBody = document.createElement("div");
+    // modalBody.classList.add("modal-body");
 
-    modalContent.append(modalBody);
-    modalContent.append(modalFooter);
+    // const modalFooter = document.createElement("div");
+    // modalFooter.classList.add("modal-footer");
+    // const modalCloseButton = document.createElement("button");
+    // modalCloseButton.classList.add("btn");
+    // const readMore = document.createElement("a");
+    // readMore.classList.add("read-more");
+    // readMore.href = "https://www.google.com/search?q=" + nomVilleAPI;
+    // readMore.target = "blank";
+    // readMore.textContent = "Voir plus d'informations";
+    // modalFooter.append(readMore);
+    // modalFooter.append(modalCloseButton);
 
-    modalContainer.append(modalContent);
+    // modalContent.append(modalBody);
+    // modalContent.append(modalFooter);
+
+    // modalContainer.append(modalContent);
 
     const buttonContainer = document.createElement("div");
     buttonContainer.classList.add("button-container");
+    
     toForecastBtn = document.createElement("button");
     toForecastBtn.classList.add("toForecastBtn");
     toForecastBtn.textContent = "5 jours de prévisions";
@@ -221,14 +227,16 @@ export async function searchByiD(cityId) {
     discoverBtn.textContent = `Plus de détails sur ${nomVilleAPI}`;
     discoverBtn.dataset.target = "#modal";
     discoverBtn.dataset.toggle = "modal";
-    discoverBtn.addEventListener("click", googleSearch);
+    discoverBtn.addEventListener("click", findAttractions);
 
     buttonContainer.append(toForecastBtn);
     buttonContainer.append(discoverBtn);
 
+    const moreInfo = document.createElement("div");
+    moreInfo.classList.add("more");
     moreInfo.append(buttonContainer);
 
-    moreInfo.append(modalContainer);
+
 
     searchResult.append(currentTemp);
     searchResult.append(resultDetail);
@@ -262,11 +270,12 @@ export async function searchByiD(cityId) {
         favButton.src = "sass/assets/2/coeur-rouge.png";
       }
     }
+
     verifFav();
-    // // BOUTON FAVORIS
+
+    // BOUTON FAVORIS
     favButton.addEventListener("click", function () {
       let tempActuelle = document.querySelector(".current-temperature");
-      // let favoris = JSON.parse(localStorage.getItem("favoris")) || [];
       localStorage.setItem("favoris", JSON.stringify(favoris));
       cityNameView2 = document.querySelector(".results__selected-place--ville");
       ville = {
@@ -291,8 +300,6 @@ export async function searchByiD(cityId) {
     /********************auquel cas, mise à jour des données météo********************/
     for (let i = 0; i < favoris.length; i++) {
       if (favoris[i].name == nomVilleAPI) {
-        favoris[i].pays = pays;
-        favoris[i].temp = temp;
         favoris[i].weather = weather;
       }
     }
@@ -354,7 +361,7 @@ searchButton.addEventListener("click", function () {
 
 /*************************VERS LES EXTRAITS DE RESULTATS GOOGLE*******************************************/
 //placer les imports une fois les éléments créés
-googleSearchInit();
+findAttractionsInit();
 
 /***********************************RECHERCHE RANDOM D'UN NOM DE VILLE*************************************/
 let map = document.querySelector(".header__maps");
