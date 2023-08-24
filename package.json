@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "description": "Weather App",
+  "name":"weather-roulette-europe",
+  "scripts": {
+    "sass": "sass --watch src/sass/main.scss src/sass/main.css"
+  },
+  "dependencies": {
+    "sass": "^1.63.6"
+  }
+}

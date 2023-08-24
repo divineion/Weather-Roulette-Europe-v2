@@ -14,7 +14,7 @@ export function forecast() {
 
       const forecast5days = document.createElement("div");
       forecast5days.classList.add("forecast5days");
-        console.log('test forecast 5 jours')
+
       //tableau contenant les prévisions à 9h de jour J à J+4
       const nextDaysForecast = [
         data.list[7],
@@ -23,6 +23,7 @@ export function forecast() {
         data.list[23],
         data.list[39],
       ];
+
       const main = document.querySelector('main');
       const title = document.createElement('div');
       title.classList.add('forecast5days__title');

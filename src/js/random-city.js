@@ -14,11 +14,6 @@ import {
 
 /*****************RECHERCHE RANDOM D'UN NOM DE VILLE************************/
 let map = document.querySelector(".header__maps");
-//let cityId;
-//let weather,
-// cityNameView2,
-//ville = {};
-
 let villeRandom;
 export let cityIdRandom;
 let nomPaysAPI;
@@ -47,9 +42,6 @@ export async function selectRandomCity() {
       nomVilleAPIRandom = villeRandom.name;
       cityIdRandom = villeRandom.id;
       nomPaysAPI = villeRandom.country;
-      lat = villeRandom.coord.lat;
-      lon = villeRandom.coord.lon;
-      coord = lat + "," + lon;
     })
     .catch((error) => {
       console.log("Une erreur s'est produite:", error);
@@ -70,6 +62,7 @@ map.addEventListener("click", searchByRandomAndId);
 /********************NOUVELLE RECHERCHE*************************************/
 const searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("click", searchByiD);
+
 
 /****************VERS LES EXTRAITS DE RESULTATS GOOGLE*********************************/
 //placement des imports une fois les éléments créés
