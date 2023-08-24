@@ -1,0 +1,2 @@
+//appid : public key of OpenWeatherMap API
+export const appid = "";

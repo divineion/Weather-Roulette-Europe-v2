@@ -1,0 +1,4 @@
+<?php 
+ define('appid', ''); 
+ //appid : public key of OpenWeatherMap API
+?>
