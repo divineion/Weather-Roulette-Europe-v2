@@ -10,9 +10,6 @@ import {
   ville,
 } from "./app.js";
 
-
-
-
 /*****************RECHERCHE RANDOM D'UN NOM DE VILLE************************/
 let map = document.querySelector(".header__maps");
 let villeRandom;
@@ -41,6 +38,7 @@ export async function selectRandomCity() {
       nomVilleAPIRandom = villeRandom.name;
       cityIdRandom = villeRandom.id;
       nomPaysAPI = villeRandom.country;
+      console.log(villeRandom);
     })
     .catch((error) => {
       console.log("Une erreur s'est produite:", error);

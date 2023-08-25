@@ -40,8 +40,6 @@ if (recherchesData) {
  * 
  */ 
 export function createView(dataArray, containerSelector) {
-
-  // neutraliser l'affichage des div présentes dans le tableau pour empêcher leur affichage en double
   containerSelector.innerHTML = '';
   if (dataArray.length === 0) {
     const emptyView = document.createElement("div");

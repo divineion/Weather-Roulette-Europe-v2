@@ -1,64 +1,66 @@
-# <span style="color:blueviolet">Weather Roulette Europe - featuring OpenWeatherMap API</span>
+# <span style="color:blueviolet">Weather Roulette Europe - featuring OpenWeatherMap API and OpenTripMap API</span>
 
-Bienvenue dans la documentation de l'application Weather Roulette Europe. 
-:slightly_smiling_face:
-Cette application vous permet de consulter les prévisions météorologiques pour les villes européennes de votre choix, ou du choix de l'appli !
+Welcome to the documentation for the Weather Roulette Europe application. :slightly_smiling_face:
 
-Voici un aperçu rapide de ses fonctionnalités et de son utilisation.
+This application allow you to consult current weather forecasts for the European cities of your choice, or any random ones in Europe !
 
-- [Aperçu](#aperçu)
-- [Fonctionnalités](#fonctionnalités)
-- [Utilisation](#utilisation)
+Here's a quick overview of its features and how to use it.
+
+## Table of contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Use](#use)
 - [Installation](#installation)
-- [Remerciements](#remerciements)
+- [Thank You](#thank%20you)
 
-### Aperçu
+### Overview
 
 ![homepage screenshot](./screenshot-home.png "homepage screenshot")
 
-L'application Météo offre une interface conviviale pour obtenir des informations météorologiques. 
-Vous retrouvez en page page d'accueil vos favoris et vos dernières recherches. 
+The Weather application offers a user-friendly interface to get weather information.
+On the homepage, you'll find your favorites and your latest searches.
 
-Vous pouvez saisir le nom d'une ville pour rechercher les prévisions météo actuelles ou cliquer sur la carte pour obtenir des prévisions d'une ville aléatoire.
+You can enter the name of a city to search for current weather forecasts, or click on the map to get forecasts for a random city.
 
-### Fonctionnalités
+### Features
 
-Prévisions météorologiques actuelles pour une ville spécifique recherchée.
-Recherche aléatoire parmi les villes des 44 pays d'Europe.
-Accès aux prévisions des 5 prochains jours. 
-Gestion des villes favorites pour un accès rapide aux prévisions.
-Historique des dernières recherches saisies pour un suivi facile.
+Current weather forecast for a specific city.
+Random search of cities in 44 European countries.
+Access to forecasts for the next 5 days.
+Management of favorite cities for quick access to forecasts.
+History of last searches entered for easy follow-up.
 
 
-### Utilisation
+### Use
 
-Page d'accueil:
-La page d'accueil présente vos éléments favoris et vos dernières recherches.
-Vous pouvez cliquer sur une ville favorite pour afficher les prévisions météo actuelles.
-Les prévisions aléatoires peuvent être obtenues en cliquant simplement sur la carte.
+Homepage:
+The homepage shows your favorite items and your latest searches.
+You can click on a favorite city to view the current weather forecast.
+Random forecasts can be showing by simply clicking on the map.
 
-Recherche de ville:
-Saisissez le nom d'une ville dans la barre de recherche et appuyez sur "Rechercher" pour obtenir les prévisions météo actuelles pour cette ville.
+City search:
+Enter the name of a city in the search bar and press "Search" to get the current weather forecast for that city.
 
-Gestion des favoris:
-Depuis la vue sur les tendances météorologiques actuelles d'une ville, vous pouvez ajouter ou supprimer des villes de votre liste de favoris.
-Une ville aléatoire vous inspire ? Ajoutez-la aux favoris en un clic. 
+Favorites management:
+From a city's current weather trends view, you can add or remove cities from your favorites list.
+Inspired by a random city? Add it to favorites with one click.
 
-Historique des recherches:
-L'historique des dernières recherches vous permet de voir rapidement les villes que vous avez saisies dans la barre de recherche.
+Search history:
+The latest search history allows you to quickly access to the cities you've entered in the search bar.
 
-Barre de navigation: 
-La navbar se déploie à tout moment en présentant un bouton de retour à l'accueil. 
+Navigation bar:
+The navbar unfolds at any time, presenting a button for returning to the home page.
 
 ### Installation
 
-1. Clonez ce référentiel sur votre machine locale.
-2. Exécutez `npm install` pour installer les dépendances nécessaires.
-3. Ouvrez le dossier dans votre éditeur de code.
-4. Complétez les fichiers `param.js.skel` et `config.js.skel` avec votre clé d'API OpenWeatherMap.
-5. Supprimez l'extension `.skel` des fichiers.
-6. Accédez à l'application dans votre navigateur.
+1. Clone this document on your local machine.
+2. Use `npm install` to install all dependencies.
+3. Open the folder in your code editor.
+4. Complete the `param.js.skel` and `config.js.skel` files with your OpenWeatherMap and your OpenTripMap API public keys.
+5. Remove the `skel` extension from the files.
+6. Access the application in your browser.
 
 
-### Remerciements
-Je remercie Cédric Rouby, <a href="https://github.com/Acksop?tab=stars">Emmanuel Roy</a>  et <a href="https://github.com/ohugonnot">Odilon Hugonnot</a>  pour leurs conseils et leur implication. 
+### Thank you
+I'd like to thank Cédric, <a href="https://github.com/Acksop?tab=stars">Emmanuel</a>  and <a href="https://github.com/ohugonnot">Odilon</a> for their advice and involvement. 

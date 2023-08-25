@@ -90,15 +90,12 @@ export async function searchByiD(cityId) {
     )
     const data = await response.json();
     console.log(data)
-    lat = data.coord.lat;
-    lon = data.coord.lon;
-    console.log('lat '+lat);
-    console.log('lon '+lon);
-
     let temp = Math.round(kelvinToCelsius(data.main.temp))
     let feels_like = kelvinToCelsius(data.main.feels_like)
     let humidity = data.main.humidity
     let wind = Math.round(data.wind.speed)
+    lat = data.coord.lat
+    lon = data.coord.lon
     let pays = data.sys.country,
     weather = data.weather[0].main;
     nomVilleAPI = data.name;
