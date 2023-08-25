@@ -28,22 +28,15 @@ export function findAttractions(e) {
       const point2 = document.createElement('div'); point2.textContent = attraction2;
       const point3 = document.createElement('div'); point3.textContent = attraction3;
 
-      console.log(attraction1, attraction2, attraction3);
-
-      console.log(point1+'point1');
       const modalContainer = document.createElement("div");
       modalContainer.classList.add("texte");
       modalContainer.id = "modal";
-      console.log('container ok');
 
       const modalContent = document.createElement("div");
-      modalContent.classList.add("results__search-result--more");
       modalContent.classList.add("modal-content");
-      console.log('modal-content ok');
 
     const modalBody = document.createElement("div");
     modalBody.classList.add("modal-body");
-    console.log('modalbody créé');
 
     modalBody.appendChild(point1);
     modalBody.appendChild(point2);
@@ -52,7 +45,6 @@ export function findAttractions(e) {
 
     const modalFooter = document.createElement("div");
     modalFooter.classList.add("modal-footer");
-    console.log('modalfooter');
 
     const modalCloseButton = document.createElement("button");
     modalCloseButton.classList.add("attractions-modal-btn");
@@ -63,18 +55,13 @@ export function findAttractions(e) {
     readMore.textContent = "Voir plus d'informations";
     modalFooter.append(readMore);
     modalFooter.append(modalCloseButton);
-    console.log('modal footer a son lien et son bouton0');
 
     modalContent.append(modalBody);
-    console.log('modalbody ajouté au content');
     modalContent.append(modalFooter);
-    console.log('modalfooter idem')
 
     modalContainer.append(modalContent);
-    (console.log('modal content ajouté au container'));
 
     main.append(modalContainer);
-    console.log('tout ça ajouté au main');
     })
     .catch((error) => {
       console.log("erreur");

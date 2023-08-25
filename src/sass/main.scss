@@ -345,65 +345,6 @@ body {
                         margin-top: 1.875rem;
                         margin-bottom: 1.875rem;
                     }
-
-                    #modal {
-                         
-                        background-color: rgba(24, 24, 30);
-                        width: 35%;
-                        height: fit-content;
-                        overflow-y: auto;
-                        position: fixed;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        z-index: 2;
-                        display: flex;
-                        opacity: 1;
-                        transition: 200ms;
-                        border-radius: 20px;
-                        
-
-                        .modal-content {
-                            margin: auto;
-                            position: relative;
-
-                            .modal-close {
-                                position: absolute;
-                                top: 15px;
-                                right: 15px;
-                                cursor: pointer;
-                            }
-
-                            .modal-body {
-                                padding: 10px;
-                                height: 60%;
-                                max-height: 60svh;
-                                font-size: 1rem;
-                                font-weight: 400;
-                            }
-
-                            .modal-footer {
-                                border-top: 1px solid #413e3e;
-                                text-align: right;
-                                display: flex;
-                                justify-content: space-between;
-                                padding-top: .625rem;
-
-                                .read-more {
-                                    text-align: left;
-                                    font-size: .875rem;
-                                    text-decoration: none;
-                                    color: #413e3e;
-                                }
-                                .attractions-modal-btn {
-                                    padding: 5px;
-                                    background-color: rgb(6, 0, 128);
-                                    text-decoration: none;
-                                    width: 20px;
-                                }
-                            }
-                        }
-                    }
                     
                     .button-container {
                         display: flex;
@@ -430,6 +371,8 @@ body {
                         }
                     }
                 }
+
+
             }
 
             .forecast5days {
@@ -503,6 +446,65 @@ body {
                     }
 
                     }
+            }
+
+            #modal {
+                background-color: rgb(0, 0, 0);
+                background: rgba(255, 255, 255, 0.37);
+                backdrop-filter: blur(0.200000003px);
+                width: 35%;
+                height: fit-content;
+                overflow-y: auto;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                display: flex;
+                opacity: 1;
+                transition: 200ms;
+                border-radius: 27px;
+                border: 1px solid rgba(255, 255, 255, 0.01);
+                box-shadow: inset 0px 0px 12px 0px;
+                
+                .modal-content {
+                    margin: auto;
+                    position: relative;
+                    
+                    .modal-body {
+                        padding: 10px;
+                        height: 60%;
+                        max-height: 60svh;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+
+
+
+                    .modal-footer {
+                        border-top: 1px solid #413e3e;
+                        text-align: right;
+                        display: flex;
+                        justify-content: space-between;
+                        padding-top: .625rem;
+
+                        .read-more {
+                            text-align: left;
+                            font-size: .875rem;
+                            text-decoration: none;
+                            color: #413e3e;
+                        }
+                        .attractions-modal-btn {
+                            padding: 5px;
+                            background-color: rgb(6, 0, 128);
+                            text-decoration: none;
+                            width: 20px;
+                        }
+                    }
+                }
             }
         } 
     }

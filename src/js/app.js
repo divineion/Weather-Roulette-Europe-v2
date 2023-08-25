@@ -182,39 +182,9 @@ export async function searchByiD(cityId) {
     const vent = resultsDivs[1];
     const ressentie = resultsDivs[2];
 
-
-
-    // const modalContainer = document.createElement("div");
-    // modalContainer.classList.add("texte");
-    // modalContainer.id = "modal";
-
-    // const modalContent = document.createElement("div");
-    // modalContent.classList.add("results__search-result--more");
-    // modalContent.classList.add("modal-content");
-
-    // const modalBody = document.createElement("div");
-    // modalBody.classList.add("modal-body");
-
-    // const modalFooter = document.createElement("div");
-    // modalFooter.classList.add("modal-footer");
-    // const modalCloseButton = document.createElement("button");
-    // modalCloseButton.classList.add("btn");
-    // const readMore = document.createElement("a");
-    // readMore.classList.add("read-more");
-    // readMore.href = "https://www.google.com/search?q=" + nomVilleAPI;
-    // readMore.target = "blank";
-    // readMore.textContent = "Voir plus d'informations";
-    // modalFooter.append(readMore);
-    // modalFooter.append(modalCloseButton);
-
-    // modalContent.append(modalBody);
-    // modalContent.append(modalFooter);
-
-    // modalContainer.append(modalContent);
-
     const buttonContainer = document.createElement("div");
     buttonContainer.classList.add("button-container");
-    
+
     toForecastBtn = document.createElement("button");
     toForecastBtn.classList.add("toForecastBtn");
     toForecastBtn.textContent = "5 jours de prévisions";
@@ -235,8 +205,6 @@ export async function searchByiD(cityId) {
     const moreInfo = document.createElement("div");
     moreInfo.classList.add("more");
     moreInfo.append(buttonContainer);
-
-
 
     searchResult.append(currentTemp);
     searchResult.append(resultDetail);
